@@ -1,0 +1,2 @@
+# Dev dependencies (not needed in production)
+flake8==7.2.0
