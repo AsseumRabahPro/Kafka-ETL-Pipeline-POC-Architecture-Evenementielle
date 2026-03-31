@@ -21,19 +21,17 @@ try:
     print("[START] Creating Kafka topics...")
     
     try:
-        fs = admin_client.create_topics(new_topics=topics, validate_only=False)
-        for topic, f in fs.items():
-            try:
-                f.result()
-                print(f"[OK] Topic '{topic}' created")
-            except TopicAlreadyExistsError:
-                print(f"[INFO] Topic '{topic}' already exists")
-            except Exception as e:
-                print(f"[ERROR] Topic '{topic}' failed: {e}")
+        admin_client.create_topics(new_topics=topics, validate_only=False)
+        print("[OK] Topics created")
     except TopicAlreadyExistsError:
         print("[INFO] Topics already exist")
     except Exception as e:
-        print(f"[ERROR] Failed to create topics: {e}")
+        err = str(e)
+        # kafka-python-ng may raise on already-existing topics even without the exception type
+        if "already exists" in err or "TopicExistsException" in err:
+            print("[INFO] Topics already exist")
+        else:
+            print(f"[ERROR] Failed to create topics: {e}")
     
     admin_client.close()
     print("[OK] Kafka topics initialized")
