@@ -1,7 +1,7 @@
 # Kafka ETL POC - Proof of Concept
 
-![CI](https://github.com/asseumrabahpro-cmd/Mini-projet-Dev-Data-ASSEUM/actions/workflows/ci.yml/badge.svg)
-![Integration Tests](https://github.com/asseumrabahpro-cmd/Mini-projet-Dev-Data-ASSEUM/actions/workflows/integration.yml/badge.svg)
+![CI](https://github.com/AsseumRabahPro/Kafka-ETL-Pipeline-POC-Architecture-Evenementielle/actions/workflows/ci.yml/badge.svg)
+![Integration Tests](https://github.com/AsseumRabahPro/Kafka-ETL-Pipeline-POC-Architecture-Evenementielle/actions/workflows/integration.yml/badge.svg)
 
 Une architecture événementielle complète démontrant un ETL temps réel avec Kafka, PostgreSQL et des workers Python spécialisés.
 
